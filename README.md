@@ -24,14 +24,6 @@ CREATE TABLE [dbo].[Student_Details](
 GO
 ```
 
-## Insert data
-```
-INSERT into [dbo].Student_Details VALUES(1, 'Krithika', 'IT', '2002/04/07 12:13:14', 'krithika.23it@licet');
-INSERT into [dbo].Student_Details VALUES(2, 'Priya', 'EEE', '2002/06/05 12:13:14', 'priya.23it@licet');
-INSERT into [dbo].Student_Details VALUES(3, 'Nithya', 'Mech', '2002/01/02 12:13:14', 'nithya.23it@licet');
-INSERT into [dbo].Student_Details VALUES(4, 'Faizal', 'Mech', '2004/04/04 11:13:14', 'faizal.23it@licet');
-```
-
 ## Alter Table
 ```
 ALTER TABLE [dbo].Student_Details ADD PRIMARY KEY (_id);
@@ -45,12 +37,20 @@ ALTER TABLE [dbo].Student_Details ADD Aadhar int NULL;
 DROP TABLE table_name;
 ```
 
-## Delete data
+## Insert Data
+```
+INSERT into [dbo].Student_Details VALUES(1, 'Krithika', 'IT', '2002/04/07 12:13:14', 'krithika.23it@licet');
+INSERT into [dbo].Student_Details VALUES(2, 'Priya', 'EEE', '2002/06/05 12:13:14', 'priya.23it@licet');
+INSERT into [dbo].Student_Details VALUES(3, 'Nithya', 'Mech', '2002/01/02 12:13:14', 'nithya.23it@licet');
+INSERT into [dbo].Student_Details VALUES(4, 'Faizal', 'Mech', '2004/04/04 11:13:14', 'faizal.23it@licet');
+```
+
+## Delete Data
 ```
 DELETE FROM [dbo].Student_Details WHERE _id=3 AND Name='Faizal'
 ```
 
-## Update data
+## Update Data
 ```
 UPDATE [dbo].Student_Details SET email = 'nithya.23it@licet' WHERE _id = 3;
 ```
