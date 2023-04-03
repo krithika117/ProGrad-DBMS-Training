@@ -42,7 +42,7 @@ ALTER TABLE [dbo].Student_Details ADD Aadhar int NULL;
 
 ## Delete Table
 ```
-
+DROP TABLE table_name;
 ```
 
 ## Delete data
@@ -54,3 +54,14 @@ DELETE FROM [dbo].Student_Details WHERE _id=3 AND Name='Faizal'
 ```
 UPDATE [dbo].Student_Details SET email = 'nithya.23it@licet' WHERE _id = 3;
 ```
+
+## Adding Foreign Key
+Scenario: Students must be a part of the departments present only in the Department_Table
+
+```
+ALTER TABLE [dbo].[Student_Details]
+ADD CONSTRAINT [FK_StudentDetails_DepartmentMaster]
+FOREIGN KEY ([department])
+REFERENCES [dbo].[Department_Master] ([department]);
+```
+The value has to be unique.
