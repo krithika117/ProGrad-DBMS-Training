@@ -1,6 +1,6 @@
 # ProGrad-DBMS-Training
 Open SSMS &rarr; Connect &rarr; Right Click Database &rarr; Name DB
-
+<br>
 ## Create Table
 
 ```
