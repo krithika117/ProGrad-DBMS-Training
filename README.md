@@ -67,6 +67,20 @@ The value has to be unique.
 |    |                                                                                                                     |                                                                                                                                  |                                                                                                                      |
 | Note | The GROUP BY clause must be used in conjunction with an aggregate function (e.g. COUNT, SUM, AVG)                     | The HAVING clause is used to filter the results of a GROUP BY query after the aggregation has taken place                      | The ORDER BY clause can be used with any column(s) in the SELECT statement, and can be sorted in ascending or descending order |
 
+## Math Functions
+| Function | Description | Syntax | Example |
+| --- | --- | --- | --- |
+Abs()       | Returns the absolute (positive) value of a number.   | Abs(value)               | Abs(-5) returns 5
+Ceiling()   | Returns the smallest integer greater than or equal to a number. | Ceiling(value) | Ceiling(3.14159) returns 4
+Floor()     | Returns the largest integer less than or equal to a number. | Floor(value) | Floor(3.14159) returns 3
+Round()     | Rounds a number to a specified number of decimal places. | Round(value, decimals) | Round(3.14159, 2) returns 3.14
+Round()     | Rounds a number to the nearest integer. If the number is exactly halfway between two integers, the function rounds to the nearest even integer. | Round(value) | Round(3.5) returns 4
+Round()     | Rounds a number to a specified number of decimal places using a specified rounding method. The rounding method can be `ToEven` (default) or `AwayFromZero`. | Round(value, decimals, mode) | Round(3.175, 2, MidpointRounding.ToEven) returns 3.18 |
+| `Truncate()` | Truncates a number to an integer by removing its decimal part. | `Truncate(value)` | `Truncate(3.14159)` returns `3` |
+| `Pow()` | Returns the result of raising a number to a specified power. | `Pow(base, exponent)` | `Pow(2, 3)` returns `8` |
+| `Sqrt()` | Returns the square root of a number. | `Sqrt(value)` | `Sqrt(16)` returns `4` |
+| `Log()` | Returns the natural logarithm of a number. | `Log(value)` or `Log(value, base)` | `Log(Math.E)` returns `1`, `Log(100, 10)` returns `2` |
+| `Exp()` | Returns the result of raising the mathematical constant e to a specified power. | `Exp(value)` | `Exp(1)` returns `2.71828182845905` |
 
 
 
