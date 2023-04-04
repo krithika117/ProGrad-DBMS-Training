@@ -139,7 +139,8 @@ The value has to be unique.
 | 3              | HR                |
 
 #### Inner Join
-```SELECT e.employee_id, e.employee_name, d.department_id, d.department_name
+```
+SELECT e.employee_id, e.employee_name, d.department_id, d.department_name
 FROM employees e
 INNER JOIN departments d
 ON e.department_id = d.department_id;
