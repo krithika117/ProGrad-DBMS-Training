@@ -114,6 +114,113 @@ The value has to be unique.
 | `REPLICATE()` | Repeats a string a specified number of times. | `REPLICATE('Hello', 3)` returns `'HelloHelloHello'` |
 | `STUFF()` | Deletes a specified length of characters in a string and then inserts another string at the specified position. | `STUFF('Hello world', 6, 5, 'universe')` returns `'Hello universe'` |
 
+## Joins in SQL Server
+| Join type | Syntax | Description |
+| --- | --- | --- |
+| INNER JOIN | `SELECT * FROM table1 INNER JOIN table2 ON table1.column = table2.column` | Returns all rows from both tables where the join condition is true. |
+| LEFT JOIN | `SELECT * FROM table1 LEFT JOIN table2 ON table1.column = table2.column` | Returns all rows from the left table and the matching rows from the right table. If there are no matching rows, NULL values are returned. |
+| RIGHT JOIN | `SELECT * FROM table1 RIGHT JOIN table2 ON table1.column = table2.column` | Returns all rows from the right table and the matching rows from the left table. If there are no matching rows, NULL values are returned. |
+| FULL OUTER JOIN | `SELECT * FROM table1 FULL OUTER JOIN table2 ON table1.column = table2.column` | Returns all rows from both tables, including NULL values where there is no match. |
+| CROSS JOIN | `SELECT * FROM table1 CROSS JOIN table2` | Returns the Cartesian product of both tables, i.e. all possible combinations of rows from both tables. |
+
+### Tables present
+| employee_id | employee_name | department_id |
+| ----------- | ------------- | -------------- |
+| 1           | John          | 1              |
+| 2           | Jane          | 2              |
+| 3           | Mike          | 1              |
+| 4           | Susan         | 2              |
+| 5           | Tom           | NULL           |
+
+| department_id | department_name |
+| -------------- | ----------------- |
+| 1              | Finance           |
+| 2              | Sales             |
+| 3              | HR                |
+
+#### Inner Join
+```SELECT e.employee_id, e.employee_name, d.department_id, d.department_name
+FROM employees e
+INNER JOIN departments d
+ON e.department_id = d.department_id;
+```
+
+| employee_id | employee_name | department_id | department_name |
+| --- | --- | --- | --- |
+| 1 | John | 1 | Finance |
+| 2 | Jane | 2 | Sales |
+| 3 | Mike | 1 | Finance |
+| 4 | Susan | 2 | Sales |
+
+#### Left Join
+```
+SELECT e.employee_id, e.employee_name, d.department_id, d.department_name
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.department_id;
+```
+| employee_id | employee_name | department_id | department_name |
+| --- | --- | --- | --- |
+| 1 | John | 1 | Finance |
+| 2 | Jane | 2 | Sales |
+| 3 | Mike | 1 | Finance |
+| 4 | Susan | 2 | Sales |
+| 5 | Tom | NULL | NULL |
+
+#### Right Join
+```
+SELECT e.employee_id, e.employee_name, d.department_id, d.department_name
+FROM employees e
+RIGHT JOIN departments d
+ON e.department_id = d.department_id;
+```
+| employee_id | employee_name | department_id | department_name |
+| --- | --- | --- | --- |
+| 1 | John | 1 | Finance |
+| 2 | Jane | 2 | Sales |
+| 3 | Mike | 1 | Finance |
+| 4 | Susan | 2 | Sales |
+| NULL | NULL | 3 | HR |
+
+#### Full Outer Join
+```
+SELECT e.employee_id, e.employee_name, d.department_id, d.department_name
+FROM employees e
+FULL OUTER JOIN departments d
+ON e.department_id = d.department_id;
+```
+| employee_id | employee_name | department_id | department_name |
+| --- | --- | --- | --- |
+| 1 | John | 1 | Finance |
+| 2 | Jane | 2 | Sales |
+| 3 | Mike | 1 | Finance |
+| 4 | Susan | 2 | Sales |
+| 5 | Tom | NULL | NULL |
+| NULL | NULL | 3 | HR |
+
+### Cross Join
+```
+SELECT e.employee_id, e.employee_name, d.department_id, d.department_name
+FROM employees e
+CROSS JOIN departments d;
+```
+| employee_id | employee_name | department_id | department_name |
+| ----------- | ------------- | -------------- | ----------------- |
+| 1           | John          | 1              | Finance           |
+| 1           | John          | 2              | Sales             |
+| 1           | John          | 3              | HR                |
+| 2           | Jane          | 1              | Finance           |
+| 2           | Jane          | 2              | Sales             |
+| 2           | Jane          | 3              | HR                |
+| 3           | Mike          | 1              | Finance           |
+| 3           | Mike          | 2              | Sales             |
+| 3           | Mike          | 3              | HR                |
+| 4           | Susan         | 1              | Finance           |
+| 4           | Susan         | 2              | Sales             |
+| 4           | Susan         | 3              | HR                |
+| 5           | Tom           | 1              | Finance           |
+| 5           | Tom           | 2              | Sales             |
+| 5           | Tom           | 3              | HR                |
 
 
 
