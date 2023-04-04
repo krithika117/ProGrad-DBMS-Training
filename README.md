@@ -223,9 +223,27 @@ CROSS JOIN departments d;
 | 5           | Tom           | 2              | Sales             |
 | 5           | Tom           | 3              | HR                |
 
+## Stored Procedures
+### Create Procedure
+```
+create procedure fetch_employee_salary as select * from employee where salary>=35000;
+```
 
+### Alter Procedure
+```
+ALTER procedure fetch_employee_salary as select * from employee where salary>=30000;
+```
 
+### Accepting input
+```
+ALTER procedure fetch_employee_salary 
+@input_base_location nchar(25), 
+@input_salary float
+as select * from employee where 
+base_location = @input_base_location and salary>=@input_salary;
+```
 
-
-
-
+### Executing the procedure
+```
+exec fetch_employee_salary 'Chennai', 20000
+```
