@@ -96,6 +96,23 @@ The value has to be unique.
 | `Weekday()` | Returns the weekday of a date as a number (1-7, where 1 is Sunday). | `Weekday(date)` | `Weekday(#2023-03-29#)` returns `2` |
 | `WeekdayName()` | Returns the name of the weekday for a specified date. | `WeekdayName(weekday, abbreviate)` | `WeekdayName(2, False)` returns `"Monday"`, `WeekdayName(2, True)` returns `"Mon"` |
 
+## String Functions
+| Function | Description | Example |
+| --- | --- | --- |
+| `LEN()` | Returns the number of characters in a string. | `LEN('Hello world')` returns `11` |
+| `CONCAT()` | Concatenates two or more strings. | `CONCAT('Hello', ' ', 'world')` returns `'Hello world'` |
+| `SUBSTRING()` | Returns a portion of a string. | `SUBSTRING('Hello world', 7, 5)` returns `'world'` |
+| `LOWER()` | Converts a string to lowercase. | `LOWER('Hello World')` returns `'hello world'` |
+| `UPPER()` | Converts a string to uppercase. | `UPPER('Hello World')` returns `'HELLO WORLD'` |
+| `LTRIM()` | Removes leading spaces from a string. | `LTRIM('   Hello World')` returns `'Hello World'` |
+| `RTRIM()` | Removes trailing spaces from a string. | `RTRIM('Hello World   ')` returns `'Hello World'` |
+| `TRIM()` | Removes leading and trailing spaces from a string. | `TRIM('   Hello World   ')` returns `'Hello World'` |
+| `REPLACE()` | Replaces all occurrences of a specified string with another string. | `REPLACE('Hello world', 'world', 'universe')` returns `'Hello universe'` |
+| `CHARINDEX()` | Returns the index of the first occurrence of a substring within a string. | `CHARINDEX('world', 'Hello world')` returns `6` |
+| `LEFT()` | Returns the specified number of characters from the beginning of a string. | `LEFT('Hello world', 5)` returns `'Hello'` |
+| `RIGHT()` | Returns the specified number of characters from the end of a string. | `RIGHT('Hello world', 5)` returns `'world'` |
+| `REPLICATE()` | Repeats a string a specified number of times. | `REPLICATE('Hello', 3)` returns `'HelloHelloHello'` |
+| `STUFF()` | Deletes a specified length of characters in a string and then inserts another string at the specified position. | `STUFF('Hello world', 6, 5, 'universe')` returns `'Hello universe'` |
 
 
 
