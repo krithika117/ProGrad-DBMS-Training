@@ -55,3 +55,24 @@ FOREIGN KEY ([department])
 REFERENCES [dbo].[Department_Master] ([department]);
 ```
 The value has to be unique.
+
+## Group by vs Having vs Order by 
+|    | GROUP BY                                                                                                            | HAVING                                                                                                                          | ORDER BY                                                                                                             |
+|----|---------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| Use | To group the results of a SELECT statement by one or more columns                                                   | To filter the results of a GROUP BY query by a specified condition                                                               | To sort the results of a SELECT statement by one or more columns                                                    |
+|    |                                                                                                                     |                                                                                                                                  |                                                                                                                      |
+| Syntax | SELECT column_name(s) FROM table_name GROUP BY column_name(s);                                                       | SELECT column_name(s) FROM table_name GROUP BY column_name(s) HAVING condition;                                                  | SELECT column_name(s) FROM table_name ORDER BY column_name(s) ASC|DESC;                                                |
+|    |                                                                                                                     |                                                                                                                                  |                                                                                                                      |
+| Example | SELECT COUNT(*) as num_orders, customer_id FROM orders GROUP BY customer_id;                                      | SELECT COUNT(*) as num_orders, customer_id FROM orders GROUP BY customer_id HAVING num_orders > 10;                             | SELECT last_name, first_name, hire_date FROM employees ORDER BY hire_date DESC;                                      |
+|    |                                                                                                                     |                                                                                                                                  |                                                                                                                      |
+| Note | The GROUP BY clause must be used in conjunction with an aggregate function (e.g. COUNT, SUM, AVG)                     | The HAVING clause is used to filter the results of a GROUP BY query after the aggregation has taken place                      | The ORDER BY clause can be used with any column(s) in the SELECT statement, and can be sorted in ascending or descending order |
+
+
+
+
+
+
+
+
+
+
