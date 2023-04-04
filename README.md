@@ -70,17 +70,31 @@ The value has to be unique.
 ## Math Functions
 | Function | Description | Syntax | Example |
 | --- | --- | --- | --- |
-Abs()       | Returns the absolute (positive) value of a number.   | Abs(value)               | Abs(-5) returns 5
-Ceiling()   | Returns the smallest integer greater than or equal to a number. | Ceiling(value) | Ceiling(3.14159) returns 4
-Floor()     | Returns the largest integer less than or equal to a number. | Floor(value) | Floor(3.14159) returns 3
-Round()     | Rounds a number to a specified number of decimal places. | Round(value, decimals) | Round(3.14159, 2) returns 3.14
-Round()     | Rounds a number to the nearest integer. If the number is exactly halfway between two integers, the function rounds to the nearest even integer. | Round(value) | Round(3.5) returns 4
-Round()     | Rounds a number to a specified number of decimal places using a specified rounding method. The rounding method can be `ToEven` (default) or `AwayFromZero`. | Round(value, decimals, mode) | Round(3.175, 2, MidpointRounding.ToEven) returns 3.18 |
+| `Abs()` | Returns the absolute (positive) value of a number. | `Abs(value)` | `Abs(-5)` returns `5` |
+| `Ceiling()` | Returns the smallest integer greater than or equal to a number. | `Ceiling(value)` | `Ceiling(3.14159)` returns `4` |
+| `Floor()` | Returns the largest integer less than or equal to a number. | `Floor(value)` | `Floor(3.14159)` returns `3` |
+| `Round()` | Rounds a number to a specified number of decimal places. | `Round(value, decimals)` | `Round(3.14159, 2)` returns `3.14` |
+| `Round()` | Rounds a number to the nearest integer. If the number is exactly halfway between two integers, the function rounds to the nearest even integer. | `Round(value)` | `Round(3.5)` returns `4` |
+| `Round()` | Rounds a number to a specified number of decimal places using a specified rounding method. The rounding method can be `ToEven` (default) or `AwayFromZero`. | `Round(value, decimals, mode)` | `Round(3.175, 2, MidpointRounding.ToEven)` returns `3.18` |
 | `Truncate()` | Truncates a number to an integer by removing its decimal part. | `Truncate(value)` | `Truncate(3.14159)` returns `3` |
 | `Pow()` | Returns the result of raising a number to a specified power. | `Pow(base, exponent)` | `Pow(2, 3)` returns `8` |
 | `Sqrt()` | Returns the square root of a number. | `Sqrt(value)` | `Sqrt(16)` returns `4` |
 | `Log()` | Returns the natural logarithm of a number. | `Log(value)` or `Log(value, base)` | `Log(Math.E)` returns `1`, `Log(100, 10)` returns `2` |
 | `Exp()` | Returns the result of raising the mathematical constant e to a specified power. | `Exp(value)` | `Exp(1)` returns `2.71828182845905` |
+
+## Date Functions
+| Function | Description | Syntax | Example |
+| --- | --- | --- | --- |
+| `Now()` | Returns the current date and time. | `Now()` | `2023-03-29 14:30:00` |
+| `Today()` | Returns the current date. | `Today()` | `2023-03-29` |
+| `DateAdd()` | Adds a specified time interval to a date. | `DateAdd(interval, number, date)` | `DateAdd("m", 1, #2023-03-29#)` returns `2023-04-29` |
+| `DateDiff()` | Returns the difference between two dates. | `DateDiff(interval, date1, date2)` | `DateDiff("d", #2023-03-29#, #2023-04-29#)` returns `31` |
+| `DatePart()` | Returns a specified part of a date. | `DatePart(interval, date)` | `DatePart("m", #2023-03-29#)` returns `3` |
+| `Year()` | Returns the year of a date. | `Year(date)` | `Year(#2023-03-29#)` returns `2023` |
+| `Month()` | Returns the month of a date. | `Month(date)` | `Month(#2023-03-29#)` returns `3` |
+| `Day()` | Returns the day of the month of a date. | `Day(date)` | `Day(#2023-03-29#)` returns `29` |
+| `Weekday()` | Returns the weekday of a date as a number (1-7, where 1 is Sunday). | `Weekday(date)` | `Weekday(#2023-03-29#)` returns `2` |
+| `WeekdayName()` | Returns the name of the weekday for a specified date. | `WeekdayName(weekday, abbreviate)` | `WeekdayName(2, False)` returns `"Monday"`, `WeekdayName(2, True)` returns `"Mon"` |
 
 
 
