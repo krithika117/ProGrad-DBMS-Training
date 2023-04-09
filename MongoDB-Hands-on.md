@@ -112,7 +112,7 @@ db.Employee.getIndexes()
 db.Employee.dropIndex("ID_1")
 ```
 
-## Aggreagate Function
+## Aggregate Function
 ### To produce an aggregate of all the price totals
 ```
 db.orders.insertMany([
