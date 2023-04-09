@@ -45,11 +45,11 @@ db.Employee.insertOne({Name: "John", ID: 1234, Age: 30, Department: "Sales"})
 Inserts multiple documents into the Employee collection
 ```
 db.Employee.insertMany([
-    {Name: "Jane", ID: 5678, Age: 25, Department: "Marketing"},
-    {Name: "Bob", ID: 91011, Age: 40, Department: "Finance"},
-    {Name: "Sarah", ID: 1213, Age: 35, Department: "Sales"},
-    {Name: "Mike", ID: 1415, Age: 45, Department: "Marketing"},
-    {Name: "Lisa", ID: 1617, Age: 28, Department: "Sales"}
+{Name: "Jane", ID: 5678, Age: 25, Department: "Marketing"},
+{Name: "Bob", ID: 91011, Age: 40, Department: "Finance"},
+{Name: "Sarah", ID: 1213, Age: 35, Department: "Sales"},
+{Name: "Mike", ID: 1415, Age: 45, Department: "Marketing"},
+{Name: "Lisa", ID: 1617, Age: 28, Department: "Sales"}
 ])
 ```
 
