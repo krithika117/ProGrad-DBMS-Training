@@ -32,6 +32,11 @@ show collections
 db.Employee.find()
 ```
 
+### Displays particular fields in the Employee collection
+```
+db.Employee.find({}, {Name: 1, Age: 1, _id: 0})
+```
+
 ### Displays the first document in the Employee collection
 ```
 db.Employee.findOne()
