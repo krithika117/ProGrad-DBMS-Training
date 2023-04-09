@@ -1,3 +1,25 @@
+# MongoDB Hands-on 10/04/2023
+## Database Commands
+Shows a list of all databases on the server
+```
+show dbs
+```
+
+Switches to the specified database
+```
+use test_db
+```
+
+Displays the current database
+```
+db
+```
+
+Deletes the current database
+```
+db.dropDatabase()
+```
+  
 ## Collection Commands
 
 Shows a list of all collections in the current database
@@ -69,7 +91,7 @@ db.Employee.count({Department: "Sales"})
 
 ## Index Commands
 
-creates an index on the ID field in the Employee collection
+Creates an index on the ID field in the Employee collection
 ```
 db.Employee.createIndex({ID: 1})
 ```
