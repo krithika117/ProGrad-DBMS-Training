@@ -130,6 +130,6 @@ db.orders.insertMany([
 ```
 db.orders.aggregate([
    { $group: { _id: "$cust_id", value: { $sum: "$price" } } },
-   { $out: "agg_alternative_1" }
+   { $out: "summation" }
 ])
 ```
