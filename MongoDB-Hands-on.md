@@ -112,7 +112,8 @@ Deletes the ID index from the Employee collection
 db.Employee.dropIndex("ID_1")
 ```
 
-## MapReduce Function
+## Aggreagate Function
+### To produce an aggregate of all the price totals.
 ```
 db.orders.insertMany([
    { _id: 1, cust_id: "Ant O. Knee", ord_date: new Date("2020-03-01"), price: 25, items: [ { sku: "oranges", qty: 5, price: 2.5 }, { sku: "apples", qty: 5, price: 2.5 } ], status: "A" },
@@ -133,3 +134,8 @@ db.orders.aggregate([
    { $out: "summation" }
 ])
 ```
+### View Output
+```
+db.summation().find().sort({value: 1})
+```
+
