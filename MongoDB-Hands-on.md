@@ -32,7 +32,7 @@ show collections
 db.Employee.find()
 ```
 
-### Displays particular fields in the Employee collection
+### Display particular fields in the Employee collection
 ```
 db.Employee.find({}, {Name: 1, Age: 1, _id: 0})
 ```
