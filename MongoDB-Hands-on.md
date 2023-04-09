@@ -144,3 +144,31 @@ db.orders.aggregate([
 db.summation().find().sort({value: 1})
 ```
 
+## Foreign Key Implementation
+Unlike relational databases, MongoDB does not have the concept of primary and foreign keys. However, we can simulate these concepts using document references.
+```
+db.customers.insertMany([
+  { _id: 1, name: "John Doe", email: "johndoe@example.com" },
+  { _id: 2, name: "Jane Smith", email: "janesmith@example.com" },
+  { _id: 3, name: "Bob Johnson", email: "bobjohnson@example.com" }
+])
+```
+```
+db.orders.insertMany([
+  { _id: 1, order_number: "123", customer_id: 1 },
+  { _id: 2, order_number: "456", customer_id: 2 },
+  { _id: 3, order_number: "789", customer_id: 1 }
+])
+```
+```
+db.orders.aggregate([
+  {
+    $lookup: {
+      from: "customers",
+      localField: "customer_id",
+      foreignField: "_id",
+      as: "customer_info"
+    }
+  }
+])
+```
