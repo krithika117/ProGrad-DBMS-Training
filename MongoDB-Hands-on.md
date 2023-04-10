@@ -1,4 +1,4 @@
-# MongoDB Hands-on 10/04/2023
+# MongoDB Hands-on 11/04/2023
 ## Database Commands
 ### Shows a list of all databases on the server
 ```
