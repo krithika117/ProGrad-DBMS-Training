@@ -170,5 +170,6 @@ db.orders.aggregate([
       as: "customer_info"
     }
   }
+  { $out: "join_demo" }
 ])
 ```
