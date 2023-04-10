@@ -169,7 +169,7 @@ db.orders.aggregate([
       foreignField: "_id",
       as: "customer_info"
     }
-  }
+  },
   { $out: "join_demo" }
 ])
 ```
