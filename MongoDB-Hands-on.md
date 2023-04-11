@@ -1,9 +1,8 @@
 # MongoDB Hands-on 11/04/2023
 
 ### Installation
-```
-https://www.mongodb.com/try/download/compass
-```
+
+[https://www.mongodb.com/try/download/compass](https://www.mongodb.com/try/download/compass)
 
 ## Database Commands
 ### Shows a list of all databases on the server
