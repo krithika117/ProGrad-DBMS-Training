@@ -89,7 +89,10 @@ db.Employee.find({Age: 30})
 ```
 db.Employee.findOne({Name: "John"})
 ```
-
+### Displays names and departments in the Employee collection where the Age is greater than 30
+```
+db.Employee.find({Age: {$gte: 30}}, {Name: 1, Department:1, _id: 0})
+```
 ### Returns a list of distinct values for the Department field in the Employee collection
 ```
 db.Employee.distinct("Department")
